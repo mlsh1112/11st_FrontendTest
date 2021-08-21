@@ -1,6 +1,46 @@
-<div class = "container">
+<div>
     <section class = "link-container">
-            <div class = "link-box"> </div>
+            <div class = "link-box alarm-back"> 
+               <span>BACK</span>
+            </div>
+            <div class = "link-box alarm-new"> 
+                <span>NEW</span>
+            </div>
     </section>
-    
+    <section>
+        <div class="alarm-input-form invisible">
+                <select name="day" id='day'>
+                    <option value="AM" selected>오전</option>
+                    <option value="PM">오후</option>
+                </select>
+                <select name="hours" id='hours'>
+                    <option value="00" selected>00</option>
+                    <option value="01">01</option>
+                    <option value="02">02</option>
+                    <option value="03">03</option>
+                    <option value="04">04</option>
+                    <option value="05">05</option>
+                    <option value="06">06</option>
+                    <option value="07">07</option>
+                    <option value="08">08</option>
+                    <option value="09">09</option>
+                    <option value="10">10</option>
+                    <option value="11">11</option>
+                    <option value="12">12</option>
+                </select>
+                <select name="minutes" id='minutes'>
+                    <option value=00 selected>00</option>
+                    <option value=10>10</option>
+                    <option value=20>20</option>
+                    <option value=30>30</option>
+                    <option value=40>40</option>
+                    <option value=50>50</option>
+                </select>
+                <button class="save-alarm">저장</button>
+
+        </div>
+        <ul class='alarm-list'>
+            
+        </ul>
+    </section>
 </div>

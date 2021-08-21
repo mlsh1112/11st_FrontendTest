@@ -8,7 +8,7 @@ const Alarm = alarm_template()
 const Memo = memo_template()
 const Image = image_template()
 
-
+const {alarm} = require('./src/Alarm')
 const routes = {
     '/':Home,
     '/alarm': Alarm,
@@ -28,6 +28,7 @@ function InitialRoutes(element){
 function historyRoutePush(pathname,element){
     window.history.pushState({},pathname,window.location.origin+pathname)
     element.innerHTML=routes[pathname]
+    if(pathname==='/alarm') alarm()
 }
 
 

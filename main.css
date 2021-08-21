@@ -43,3 +43,7 @@ body{
 .invisible{
     opacity: 0;
 }
+
+.alarm-container button{
+    width: 50px;
+}
