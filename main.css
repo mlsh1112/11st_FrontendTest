@@ -9,3 +9,29 @@ body{
     justify-content: center;
     font-size: 20px;
 }
+
+.link-container{
+    display: flex;
+}
+
+.link-box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex : 1;
+    width: 30px;
+    height: 70px;
+    margin: 20px;
+    background-color: cornsilk;
+    color: darkblue;
+    border-radius: 10px;
+    box-shadow: 3px 3px 3px gray;
+    cursor: pointer;
+}
+.link-box:hover{
+    background-color: honeydew;
+}
+
+.invisible{
+    opacity: 0;
+}
