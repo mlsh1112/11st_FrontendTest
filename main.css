@@ -12,16 +12,24 @@ body{
 
 .link-container{
     display: flex;
+    align-items: center;
+    justify-content: center;
 }
-
+.drop-zone{
+    flex : 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100px;
+    height: 100px;
+}
 .link-box{
     display: flex;
     align-items: center;
     justify-content: center;
     flex : 1;
-    width: 30px;
-    height: 70px;
-    margin: 20px;
+    margin: 40px;
+    height: 80px;
     background-color: cornsilk;
     color: darkblue;
     border-radius: 10px;

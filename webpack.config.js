@@ -7,7 +7,11 @@ const { resolve } = require('path')
 module.exports = {
   entry: {
     router: './router.js',
-    app: './main.js'
+    app: './main.js',
+    home : './src/Home.js',
+    alarm : './src/Alarm.js',
+    image : './src/Image.js',
+    memo : './src/Memo.js'
   },
 
   output: {
