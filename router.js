@@ -10,6 +10,7 @@ const Image = image_template()
 
 const {alarm} = require('./src/Alarm')
 const {memo} = require('./src/Memo')
+const {image} = require('./src/Image')
 
 const routes = {
     '/':Home,
@@ -32,6 +33,7 @@ function historyRoutePush(pathname,element){
     element.innerHTML=routes[pathname]
     if(pathname==='/alarm') alarm()
     else if(pathname==='/memo') memo()
+    else if(pathname==='/image') image()
 }
 
 

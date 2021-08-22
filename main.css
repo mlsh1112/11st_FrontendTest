@@ -54,4 +54,46 @@ body{
     display: -webkit-box;
     -webkit-line-clamp: 2; 
     -webkit-box-orient: vertical;
-} 
+}
+.img-link-container{
+    display: flex;
+}
+
+.image-back{
+    flex:0.1;
+    height: 30px;
+}
+
+.img-scroll-view{
+    height: 150px;
+    background-color:dodgerblue;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    white-space: nowrap;
+    margin:0 auto;
+
+}
+
+.img-preview {    
+    display: inline-block;
+    margin-left: 40px;
+    height: 90%;
+    width: 150px;
+    border-radius: 30px;
+}
+
+.img-view img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+.draw-boarder{
+    border: 6px solid orange;
+}
+
+.img-view {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 60vh;
+}

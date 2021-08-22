@@ -7,7 +7,7 @@ const { resolve } = require('path')
 module.exports = {
   entry: {
     router: './router.js',
-    app: ['./main.js','./src/Home.js','./src/Alarm.js','./src/Image.js','./src/Memo.js']
+    app: ['./main.js','./src/Home.js','./src/Alarm.js','./src/Image.js','./src/Memo.js'],
   },
 
   output: {
@@ -35,7 +35,19 @@ module.exports = {
       {
         test: /\.css$/,
         use: [MiniCssExtractPlugin.loader, 'css-loader'],
-      }
+      },
+      {
+        test: /\.(png|jpg|gif)$/i,
+        use: [
+          {
+            loader: "url-loader",
+            options: {
+              name: '[hash].[ext]',
+              limit: 10000
+            }
+          }
+        ]
+      },
     ]
   }
 }

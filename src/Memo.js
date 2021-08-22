@@ -20,7 +20,7 @@ function memo(){
     memoNewBtn.addEventListener('click',()=>{
         memoInputForm.classList.remove('invisible')
     })
-    memoInput.addEventListener('keyup',(event)=>{
+    memoInput.addEventListener('keypress',(event)=>{
         if(event.keyCode===13){
             let value = event.target.value
             renderMemo(value)
