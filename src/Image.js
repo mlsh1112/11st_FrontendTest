@@ -1,6 +1,4 @@
-
-
-function image(img1){
+function image(){
     const imageBackBtn = document.querySelector('.image-back')
     const imgScrollView = document.querySelector('.img-scroll-view')
     const imgView = document.querySelector('.img-view')

@@ -1,6 +1,6 @@
 require('./main.css')
 const { InitialRoutes, historyRoutePush } = require('./router')
-const {checkAlarm} = require('./src/Alarm')
+const {checkAlarm,isAdd} = require('./src/Alarm')
 const AppDiv = document.querySelector('.contents')
 
 InitialRoutes(AppDiv)
@@ -30,9 +30,14 @@ function Clock () {
     let hours = today.getHours()
     let minutes = today.getMinutes()
     let seconds = today.getSeconds()
-
     let alarmCheck = String(hours).padStart(2,'0')+String(minutes).padStart(2,'0')
 
+    if(isAdd()){
+      localAlarmObj = JSON.parse(localStorage.getItem('alarm-array'))
+      localAlarmList= []
+      if(localAlarmObj) localAlarmObj.map(el=>localAlarmList.push(el.item))
+    }
+    
     if(localAlarmList.includes(alarmCheck)){
       alert(hours+"시 "+minutes+"분"+" 알람")
       

@@ -1,7 +1,7 @@
 const ALARM_KEY = 'alarm-array'
 let alarmList
 let alarmArr = localStorage.getItem(ALARM_KEY)
-
+let alarmAdd = false
 function alarm(){
     let alarmNewBtn = document.querySelector('.alarm-new')
     let alarmBackBtn = document.querySelector('.alarm-back')
@@ -36,7 +36,7 @@ function alarm(){
         renderAlarmList(newAlarm)
         alarmArr.push(newAlarm)
         localStorage.setItem(ALARM_KEY,JSON.stringify(alarmArr))
-
+        alarmAdd = true
         inputform.classList.add('invisible')
     })
 
@@ -75,6 +75,8 @@ function deleteAlarm(event){
     alarmArr=alarmArr.filter(el=>el.id!==parseInt(target_li.id))
     localStorage.setItem(ALARM_KEY,JSON.stringify(alarmArr))
     target_li.remove()
+
+    alarmAdd = true
 }
 
 function checkAlarm(){
@@ -87,7 +89,16 @@ function checkAlarm(){
     alarmList=ul
     local.forEach(renderAlarmList)
 }
+
+function isAdd(){
+    if(alarmAdd) {
+        alarmAdd=false
+        return true
+    }
+    return false
+}
 module.exports = {
     alarm,
-    checkAlarm
+    checkAlarm,
+    isAdd
 }
