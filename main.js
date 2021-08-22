@@ -26,7 +26,7 @@ function Clock () {
     
     let year = today.getFullYear()
     let month = today.getMonth()+1
-    let date = today.getDay()
+    let date = today.getDate()
     let hours = today.getHours()
     let minutes = today.getMinutes()
     let seconds = today.getSeconds()
