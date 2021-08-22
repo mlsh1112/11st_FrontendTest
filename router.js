@@ -9,6 +9,7 @@ const Memo = memo_template()
 const Image = image_template()
 
 const {alarm} = require('./src/Alarm')
+
 const routes = {
     '/':Home,
     '/alarm': Alarm,
