@@ -13,9 +13,6 @@ function alarm(){
     if(!alarmArr) alarmArr=[]
     else alarmArr = JSON.parse(alarmArr)
     alarmArr.forEach(renderAlarmList)
-    
-    let localAlarmList = []
-    if(alarmArr) alarmArr.map(el=>localAlarmList.push(el.item))
 
 
     alarmBackBtn.addEventListener('click',()=>{
@@ -38,7 +35,6 @@ function alarm(){
         }
         renderAlarmList(newAlarm)
         alarmArr.push(newAlarm)
-        localAlarmList.push(newAlarm.item)
         localStorage.setItem(ALARM_KEY,JSON.stringify(alarmArr))
 
         inputform.classList.add('invisible')
