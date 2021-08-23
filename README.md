@@ -8,7 +8,7 @@
 ### 접속
 http://localhost:8080/ 로 접속
 
-## version
+## 개발 환경
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
