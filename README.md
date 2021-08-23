@@ -1,14 +1,14 @@
 # 11번가 검색서비스 Frontend분야 사전과제
 
 ## 실행 방법
-### 모듈 설치
+### node_modules 설치
 `npm install`
 ### 실행
 `npm start`
 ### 접속
 http://localhost:8080/ 로 접속
 
-## 모듈
+## version
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
@@ -24,6 +24,8 @@ http://localhost:8080/ 로 접속
 ## 파일 구조
 <img src="https://user-images.githubusercontent.com/59257758/130381295-5c7a01cd-e3f7-492c-9afe-3c03c20655ba.png" width="180px">
 
+- Pages : 각 앱의 DOM 파일들이 있는 폴더
+- src : DOM을 동작하는 javascript 및 이미지가 있는 폴더
 
 ### HTML
 - index.html : 기본 페이지(Single page)
@@ -32,7 +34,7 @@ http://localhost:8080/ 로 접속
 - image.hbs : image 화면 DOM
 - memo.hbs : memo 화면 DOM
 
-### JS
+### JavaScript
 - main.js : clock 및 모든 앱에서 alarm alert 기능
 - route.js : page 간 라우터 기능
 - Alarm.js : alarm 생성 및 local storage 에 alarm 저장
