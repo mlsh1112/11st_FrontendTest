@@ -1,4 +1,6 @@
 const ALARM_KEY = 'alarm-array'
+import {parserHour, parserDay} from './ClockRender'
+
 let alarmList
 let alarmArr = localStorage.getItem(ALARM_KEY)
 let alarmChange = false
@@ -35,7 +37,7 @@ function alarm(){
         minutes = minutes.options[minutes.selectedIndex].value
 
         // 오후인 경우 시에 12를 더함
-        if(day==='PM') hours=String(12+parseInt(hours))
+        hours=parserHour(hours,day)
 
         let newAlarm = {
             id : Date.now(),
@@ -60,13 +62,7 @@ function renderAlarmList(newAlarm){
     let hour = parseInt(time.slice(0,2))
     let minutes = time.slice(2)
 
-    if(hour>12) {
-        time='오후 '
-        hour=String(hour-12).padStart(2,'0')
-    }
-    else time='오전 '
-
-    time+=hour + '시 '+minutes+'분'
+    time = parserDay(hour,minutes)
 
     const li = document.createElement("li")
     li.id = newAlarm.id

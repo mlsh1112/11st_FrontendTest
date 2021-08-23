@@ -1,7 +1,7 @@
 import './main.css'
 import { InitialRoutes, historyRoutePush } from './router'
 import {checkAlarm,isAlarmChange} from './src/Alarm'
-
+import {ClockRender} from './src/ClockRender'
 const ALARM_KEY = 'alarm-array'
 const AppDiv = document.querySelector('.contents')
 
@@ -31,21 +31,12 @@ function Clock () {
     const clock = document.querySelector('.clock')
     let today = new Date()
     
-    let year = today.getFullYear()
-    let month = today.getMonth()+1
-    let date = today.getDate()
     let hours = today.getHours()
     let minutes = today.getMinutes()
-    let seconds = today.getSeconds()
     let alarmCheck = String(hours).padStart(2,'0')+String(minutes).padStart(2,'0')
 
     // 시계 생성
-    clock.innerText = String(year)+ '년 '
-                        + String(month) + '월 '
-                        + String(date) + '일 '
-                        + String(hours).padStart(2,'0') + '시 '
-                        + String(minutes).padStart(2,'0') + '분 '
-                        + String(seconds).padStart(2,'0') + '초'
+    clock.innerText = ClockRender()
 
 
     
