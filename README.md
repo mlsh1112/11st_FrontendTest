@@ -5,7 +5,7 @@
 `npm install`
 ### 실행
 `npm start`
-### Test
+### Testing
 `npm test`
 ### 접속
 http://localhost:8080/ 로 접속
@@ -52,6 +52,9 @@ http://localhost:8080/ 로 접속
 <hr/>
 
 ## Testing
+### Testing 방법
+`npm test`
+
 ClockRender.js 파일의 시간을 변환해주는 함수를 테스팅했습니다.
 - parserHour(hours,day) 함수 / hours는 시를 나타내고 day는 PM/AM을 나타냅니다.
     - parserHour('3','PM') 으로 들어오는 경우 15시로 반환되는지 테스트
