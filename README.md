@@ -5,21 +5,29 @@
 `npm install`
 ### 실행
 `npm start`
+### Test
+`npm test`
 ### 접속
 http://localhost:8080/ 로 접속
+<hr/>
 
 ## 개발 환경
+    "@babel/core": "^7.15.0",
+    "@babel/preset-env": "^7.15.0",
+    "@types/jest": "^27.0.1",
     "clean-webpack-plugin": "^4.0.0-alpha.0",
     "css-loader": "^6.2.0",
     "file-loader": "^6.2.0",
     "handlebars": "^4.7.7",
     "handlebars-loader": "^1.7.1",
     "html-webpack-plugin": "^5.3.2",
+    "jest": "^27.0.6",
     "mini-css-extract-plugin": "^2.2.0",
     "url-loader": "^4.1.1",
     "webpack": "^5.51.1",
     "webpack-cli": "^4.8.0",
     "webpack-dev-server": "^4.0.0"
+<hr/>
 
 ## 파일 구조
 <img src="https://user-images.githubusercontent.com/59257758/130381295-5c7a01cd-e3f7-492c-9afe-3c03c20655ba.png" width="180px">
@@ -41,6 +49,17 @@ http://localhost:8080/ 로 접속
 - Home.js : icon 간에 drag-drop 기능 및 local storage 에 icon 순서 저장
 - Image.js : image 앱 기능
 - Memo.js : memo 생성 및 local storage 에 memo 저장
+<hr/>
+
+## Testing
+ClockRender.js 파일의 시간을 변환해주는 함수를 테스팅했습니다.
+- parserHour(hours,day) 함수 / hours는 시를 나타내고 day는 PM/AM을 나타냅니다.
+    - parserHour('3','PM') 으로 들어오는 경우 15시로 반환되는지 테스트
+    - parserHour('3','AM') 으로 들어오는 경우 3시로 반환되는지 테스트
+- parserDay(hour,minutes) 함수 / hour는 시를 나타내고 minutes는 분을 나타냅니다. 
+    - parserDay('3','30') 으로 들어오는 경우 '오후 03시 30분' 으로 반환되는지 테스트
+    - parserDay('15','30') 으로 들어오는 경우 '오전 03시 30분' 으로 반환되는지 테스트
+<hr/>
 
 ## 시연 영상
 ### HOME
