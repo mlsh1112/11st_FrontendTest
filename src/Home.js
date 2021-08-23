@@ -1,5 +1,5 @@
-const ICONARR_KEY = 'icon-array'
-const HTML = {
+const ICON_KEY = 'icon-array'
+const BTNHTML = {
     "alarm" : "<span class = 'link' id='alarm'  route='/alarm'>alarm</span>",
     "memo" : " <span class = 'link' id='memo'   route='/memo'>memo</span>",
     "image" : "<span class = 'link' id='image'  route='/image'>image</span>",
@@ -8,7 +8,8 @@ const HTML = {
 const Icons = document.querySelectorAll(".drop-zone")
 const linkBoxes = document.querySelectorAll('.link-box')
 
-let iconsArray = localStorage.getItem(ICONARR_KEY)
+// 아이콘 순서 배열
+let iconsArray = localStorage.getItem(ICON_KEY)
 let inital_iconArr = ['alarm','image','memo']
 
 if(!iconsArray){
@@ -46,16 +47,19 @@ function drop(ev){
     destIcon = ev.target.innerText
     destInx = iconsArray.indexOf(destIcon)
 
+    // 배열 순서 다시 저장
     iconsArray.splice(startInx,1)
     iconsArray.splice(destInx,0,startIcon)
     
+    // 재배치된 아이콘에 맞게 랜더링
     renderingIcons()
     window.location.reload()
 }
 
+// Home 화면에 배열 순서에 맞게 랜더링
 function renderingIcons(){
     iconsArray.map((el,i)=>{
-        linkBoxes[i].innerHTML = HTML[el]
+        linkBoxes[i].innerHTML = BTNHTML[el]
     })
-    localStorage.setItem(ICONARR_KEY,JSON.stringify(iconsArray))
+    localStorage.setItem(ICON_KEY,JSON.stringify(iconsArray))
 }
